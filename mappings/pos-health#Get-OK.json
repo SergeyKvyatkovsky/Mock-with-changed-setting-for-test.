@@ -1,0 +1,139 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "OPTIONS"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/pos/health"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "urlPathPattern": "/pos/stop"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/pos/card"
+      },
+      "response": {
+        "fixedDelayMilliseconds": 2000,
+        "status": 202,
+        "jsonBody": {
+          "terminalId": "123",
+          "cardNumber": "5486********0111",
+          "expiryDate": "2021-09",
+          "plasticId": "1234567890",
+          "errorMessage": "Какая-то ошибка в /pos/card"
+        },
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/pos/card-and-pinblock"
+      },
+      "response": {
+        "fixedDelayMilliseconds": 2000,
+        "status": 202,
+        "jsonBody": {
+          "terminalId": "456",
+          "cardNumber": "4261********5460",
+          "expiryDate": "2024-07",
+          "plasticId": "1234567890",
+          "pinBlock": "1E9C7ED10F82AC76",
+          "errorMessage": "Какая-то ошибка в /pos/card-and-pinblock"
+        },
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/pos/pkt-card"
+      },
+      "response": {
+        "fixedDelayMilliseconds": 2000,
+        "status": 200,
+        "jsonBody": {
+          "terminalId": "789",
+          "cardNumber": "7009********4908",
+          "expiryDate": "2020-07",
+          "plasticId": "1234567890",
+          "errorMessage": "Какая-то ошибка в /pos/pkt-card"
+        },
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/pos/pin-confirmed"
+      },
+      "response": {
+        "fixedDelayMilliseconds": 2000,
+        "status": 200,
+        "jsonBody": {
+          "pinBlock": "1E9C7ED10F82AC76",
+          "errorMessage": "Какая-то ошибка в /pos/pin-confirmed"
+        },
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    },
+	{
+      "request": {
+        "method": "GET",
+        "urlPathPattern": "/pos/pososi"
+      },
+      "response": {
+        "fixedDelayMilliseconds": 2000,
+        "status": 200,
+        "jsonBody": {
+          "hui": "20SM",
+          "pizda": "у тебя пизда вместо хуй"
+        },
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "Access-Control-Allow-Origin": "*"
+        }
+      }
+    }
+  ]
+}
